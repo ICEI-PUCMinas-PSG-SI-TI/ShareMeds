@@ -1,0 +1,103 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro | ShareMeds</title>
+    <link rel="stylesheet" href="style.css"> 
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro | ShareMeds</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <section class="cadastro">
+
+            <h1>Fazer o cadastro</h1>
+
+            <p class="subtitulo">
+                Cadastro de médico. O acesso é liberado após validação dos dados.
+            </p>
+
+            <form>
+
+                <div class="campo">
+                    <label for="nome">Nome completo:</label>
+                    <input type="text" id="nome" required>
+                </div>
+
+                <div class="campo">
+                    <label for="crm">CRM/CRF</label>
+                    <input type="text" id="crm" required>
+                </div>
+
+                <div class="campo">
+                    <label for="hospital">Hospital onde trabalha</label>
+                    <select id="hospital" required>
+                        <option value="">Selecione uma opção</option>
+                        <option value=Hospital João XXIII>Hospital João XXIII</option>
+                        <option value="Hospital Municipal Odilon Behrens (HOB)">Hospital Municipal Odilon Behrens (HOB)</option>
+                        <option value="Hospital Risoleta Tolentino Neves (HRTN)">Hospital Risoleta Tolentino Neves (HRTN)</option>
+                        <option value="Hospital Eduardo de Menezes">Hospital Eduardo de Menezes</option>
+                        <option value="Hospital Mário Penna">Hospital Mário Penna</option>
+                        <option value="Hospital Vera Cruz">Hospital Vera Cruz</option>
+                        <option value="Hospital Unimed (Unidade Contorno)">Hospital Unimed (Unidade Contorno)</option>
+                        <option value="Hospital Madre Teresa">Hospital Madre Teresa</option>
+                        
+
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="email">E-mail institucional</label>
+                    <input type="email" id="email" required>
+                </div>
+
+                <div class="campo">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" required>
+                </div>
+
+                <div class="campo">
+                    <label for="documento">
+                        Documento ou carteira profissional
+                    </label>
+
+                    <div class="upload">
+                        <p>Anexar foto ou PDF (frente e verso)</p>
+
+                        <input
+                            type="file"
+                            id="documento"
+                            accept=".jpg,.jpeg,.png,.pdf"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-cadastro">
+                    Criar conta
+                </button>
+
+                <p class="login">
+                    Já tenho cadastro!
+                    <a href="login.html">Voltar ao login</a>
+                </p>
+
+            </form>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
+
+
+
