@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ShareMeds - Nova solicitação</title>
+  <link rel="stylesheet" href="solicitacao.css">
+</head>
+<body>
+  <header class="topo">
+    <a class="logo" href="solicitacao.html">ShareMeds</a>
+  </header>
+
+  <main>
+    <a class="btn claro pequeno voltar" href="#" data-grupo>← Início</a>
+    <h1 id="titulo-pagina" style="text-decoration:none">Nova solicitação</h1>
+    <p class="subtitulo" id="subtitulo">Medicamento: <strong id="nome-medicamento">—</strong></p>
+
+    <form class="form" id="form-solicitacao" novalidate>
+      <p class="aviso-medicamento" id="aviso-medicamento" hidden>Nenhum medicamento selecionado. Escolha o medicamento na tela Buscar antes de fazer a solicitação.</p>
+      <input type="hidden" id="medicamento">
+      <div class="erro" id="erro-medicamento" hidden></div>
+
+      <div class="linha">
+        <div>
+          <label for="quantidade">Quantidade</label>
+          <input id="quantidade" type="number" min="1" placeholder="ex: 20">
+          <div class="erro" id="erro-quantidade"></div>
+        </div>
+        <div>
+          <label for="unidade">Unidades</label>
+          <select id="unidade">
+            <option value="">escolha a unidade</option>
+            <option>caixas</option>
+            <option>ampolas</option>
+            <option>frascos</option>
+            <option>comprimidos</option>
+            <option>unidades</option>
+          </select>
+          <div class="erro" id="erro-unidade"></div>
+        </div>
+        <div>
+          <label for="modalidade">Modalidade</label>
+          <select id="modalidade">
+            <option value="">ex: empréstimo/ doação</option>
+            <option value="emprestimo">Empréstimo</option>
+            <option value="doacao">Doação</option>
+          </select>
+          <div class="erro" id="erro-modalidade"></div>
+        </div>
+        <div>
+          <label for="urgencia">Urgência</label>
+          <select id="urgencia">
+            <option value="">ex: alta/ média/ baixa</option>
+            <option value="alta">Alta</option>
+            <option value="media">Média</option>
+            <option value="baixa">Baixa</option>
+          </select>
+          <div class="erro" id="erro-urgencia"></div>
+        </div>
+      </div>
+
+      <label for="justificativa">Justificativa</label>
+      <textarea id="justificativa" placeholder="ex: Motivo da falta e prazo máximo para a chegada da medicação"></textarea>
+      <div class="erro" id="erro-justificativa"></div>
+
+      <div class="botoes">
+        <button type="submit" class="btn" id="btn-enviar">Enviar</button>
+        <button type="button" class="btn" id="btn-cancelar">Cancelar</button>
+      </div>
+    </form>
+
+    <section class="lista">
+      <h2>Minhas solicitações</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Data</th><th>Medicamento</th><th>Qtd</th><th>Modalidade</th>
+            <th>Urgência</th><th>Status</th><th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="corpo-solicitacoes"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="common.js"></script>
+  <script src="solicitacao.js"></script>
+</body>
+</html>
