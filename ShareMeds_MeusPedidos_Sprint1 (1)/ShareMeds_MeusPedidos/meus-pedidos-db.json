@@ -1,0 +1,7 @@
+{
+  "pedidos": [
+    { "id": "1", "medicamento": "Dipirona (500 mg)", "hospital": "Hosp. Seguro", "status": "Em análise" },
+    { "id": "2", "medicamento": "Soro Fisiológico 0,9% (500 ml)", "hospital": "Hosp. Vida Longa", "status": "Aceito" },
+    { "id": "3", "medicamento": "Insulina NHP (100 UI/ml)", "hospital": "Hosp. Seguro", "status": "Recusada" }
+  ]
+}
