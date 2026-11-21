@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ShareMeds - Início</title>
+  <link rel="stylesheet" href="css/menu.css">
+</head>
+<body>
+  <header class="topo">
+    <a class="logo" href="inicio.html">ShareMeds</a>
+    <nav>
+      <a href="#" data-grupo>Ofertar excedente</a>
+      <a href="#" data-grupo>Meus pedidos</a>
+      <a href="#" data-grupo>Pedidos recebidos</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="titulo-linha">
+      <h1 style="margin:6px 0 20px">Início</h1>
+      <div class="atualizacao">
+        <span id="ultima-atualizacao">Carregando...</span>
+        <button type="button" class="btn claro pequeno" id="btn-atualizar">↻ Atualizar</button>
+      </div>
+    </div>
+
+    <div class="grade">
+      <div class="coluna">
+        <section class="card">
+          <h2>Estoque baixo/ faltantes no meu hospital</h2>
+          <div id="lista-estoque-baixo"><p class="vazio">Carregando...</p></div>
+          <div class="rodape-card">
+            <a class="btn" href="#" data-grupo>Buscar outro medicamento</a>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Excedentes da rede perto de vencer</h2>
+          <div class="filtros">
+            <input type="search" class="busca" id="busca-excedente" placeholder="Pesquisar medicamento ou hospital">
+            <select id="ordem-excedente" aria-label="Ordenar excedentes">
+              <option value="vencimento">Vencimento mais próximo</option>
+              <option value="quantidade">Maior quantidade</option>
+              <option value="nome">Nome (A–Z)</option>
+            </select>
+          </div>
+          <div id="lista-excedentes"><p class="vazio">Carregando...</p></div>
+          <div class="rodape-card">
+            <a class="btn" href="#" data-grupo>Solicitar outro medicamento</a>
+          </div>
+        </section>
+      </div>
+
+      <div class="coluna">
+        <section class="card dest">
+          <h2>Notificações</h2>
+          <div class="item">
+            <span class="nome" id="texto-notificacoes">Carregando...</span>
+            <button type="button" class="btn pequeno" id="btn-ver-notificacoes">Ver</button>
+          </div>
+          <ul class="notif-lista" id="lista-notificacoes" hidden></ul>
+        </section>
+
+        <section class="card">
+          <h2>Meu hospital</h2>
+          <p class="hospital-nome" id="nome-hospital">—</p>
+          <p class="resumo" id="resumo-hospital">Carregando...</p>
+          <div class="acoes">
+            <a class="btn" href="#" data-grupo>Ver estoque</a>
+            <a class="btn" href="#" data-grupo>Cadastrar medicamento</a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/common-menu.js"></script>
+  <script src="js/menu.js"></script>
+</body>
+</html>

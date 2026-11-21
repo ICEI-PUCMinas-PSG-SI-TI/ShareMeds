@@ -1,0 +1,73 @@
+:root{--topo:#6b82a6;--fundo:#dbe1ec;--card:#e9ecf2;--card-dest:#cdd6e8;--botao:#3b3b3b;--texto:#1f2430;--sub:#4a5160;}
+*{box-sizing:border-box}
+body{margin:0;font-family:Georgia,"Times New Roman",serif;background:var(--fundo);color:var(--texto)}
+header.topo{background:var(--topo);color:#fff;display:flex;justify-content:space-between;align-items:center;padding:18px 28px}
+header.topo .logo{font-size:1.7rem;text-decoration:none;color:#fff}
+header.topo nav a{color:#fff;text-decoration:none;margin-left:28px;opacity:.9}
+header.topo nav a:hover{text-decoration:underline}
+main{padding:24px 28px;max-width:1100px;margin:0 auto}
+h1{font-size:1.6rem;text-decoration:underline;font-weight:normal;margin:6px 0 20px}
+h2{font-size:1.15rem;text-decoration:underline;font-weight:normal;margin:0 0 14px}
+.grade{display:grid;grid-template-columns:1.25fr 1fr;gap:20px;align-items:start}
+.coluna{display:flex;flex-direction:column;gap:20px}
+.card{background:var(--card);border-radius:12px;padding:18px 20px}
+.card.dest{background:var(--card-dest);border:1px solid #aab7d3}
+.item{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:8px 0}
+.item .nome{font-size:1.05rem}
+.item small{display:block;color:var(--sub);font-size:.8rem;margin-top:2px}
+.btn{background:var(--botao);color:#fff;border:0;border-radius:6px;padding:10px 22px;font-family:inherit;font-size:1rem;cursor:pointer;text-decoration:none;display:inline-block}
+.btn:hover{background:#000}
+.btn.claro{background:#f4f4f4;color:var(--texto);border:1px solid #888}
+.btn.pequeno{padding:6px 12px;font-size:.85rem}
+.btn.perigo{background:#9b2c2c}
+.rodape-card{display:flex;justify-content:flex-end;margin-top:8px}
+.acoes{display:flex;gap:12px;flex-wrap:wrap}
+.busca{width:100%;padding:9px 12px;border:1px solid #9aa3b5;border-radius:6px;font-family:inherit;font-size:.95rem;margin-bottom:10px;background:#f4f4f4}
+table{width:100%;border-collapse:collapse;background:#f7f8fb;border-radius:8px;overflow:hidden;font-size:.9rem}
+th,td{padding:8px 10px;text-align:left;border-bottom:1px solid #d3d8e3}
+th{background:#c9d1e3;cursor:default}
+th.ord{cursor:pointer}
+th.ord:hover{background:#b9c4dc}
+.vazio{color:var(--sub);font-style:italic;padding:8px 0}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#222;color:#fff;padding:10px 18px;border-radius:8px;opacity:0;transition:opacity .25s;pointer-events:none;z-index:10}
+.toast.ativo{opacity:1}
+.voltar{margin-bottom:18px}
+.subtitulo{color:var(--sub);font-size:1.05rem;margin:0 0 18px}
+.form{background:#dcdde1;border-radius:12px;padding:20px}
+.form .linha{display:grid;grid-template-columns:1fr 1fr;gap:18px 40px;margin-bottom:14px}
+label{display:block;margin-bottom:5px;font-size:1.05rem}
+input,select,textarea{width:100%;padding:10px 12px;border:1px solid #8b8f99;border-radius:6px;font-family:inherit;font-size:.95rem;background:#f4f4f4}
+textarea{min-height:100px;resize:vertical}
+.erro{color:#9b2c2c;font-size:.82rem;margin-top:3px;min-height:1em}
+.form .botoes{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:10px}
+.form .botoes .btn{width:100%}
+.lista{margin-top:28px}
+.tag{padding:2px 8px;border-radius:10px;font-size:.78rem;background:#d9e2f5}
+.tag.alta{background:#f3c9c9}.tag.media{background:#f5e6b8}.tag.baixa{background:#cfe8cf}
+.hosp{display:block;color:var(--sub);font-size:.78rem;margin-top:2px}
+.status{background:#c9ad52;color:#fff;padding:4px 12px;border-radius:6px;font-size:.82rem;white-space:nowrap}
+.aviso-medicamento{background:#f5e6b8;border-radius:6px;padding:8px 12px;margin:0 0 14px;font-size:.9rem}
+input:disabled,select:disabled,textarea:disabled,.btn:disabled{opacity:.55;cursor:not-allowed}
+@media(max-width:760px){.grade,.form .linha,.form .botoes{grid-template-columns:1fr}header.topo nav{display:none}}
+
+/* ---------- Tela Início ---------- */
+.icone-logo{width:30px;height:30px;vertical-align:middle;margin-right:10px}
+.titulo-linha{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.atualizacao{display:flex;align-items:center;gap:10px;color:var(--sub);font-size:.85rem;margin-bottom:14px}
+.card h2{font-size:1.1rem}
+.item .nome{flex:1}
+.item .nome small{margin-bottom:4px}
+.barra{background:#cfd4df;border-radius:6px;height:8px;margin-top:6px;overflow:hidden;max-width:260px}
+.barra span{display:block;height:100%;background:#9b2c2c;border-radius:6px}
+.filtros{display:grid;grid-template-columns:1.4fr 1fr;gap:10px;margin-bottom:6px}
+.filtros .busca{margin-bottom:0}
+.filtros select{padding:9px 12px}
+.item .tag{display:inline-block;margin-top:4px}
+.notif-lista{list-style:none;margin:6px 0 0;padding:0}
+.notif-lista li{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 0;border-top:1px solid #aab7d3;font-size:.92rem}
+.notif-lista small{display:block;color:var(--sub);font-size:.78rem}
+.selo{padding:3px 10px;border-radius:6px;color:#fff;font-size:.8rem;white-space:nowrap}
+.selo.aceito{background:#4f6b3f}.selo.recusado{background:#a94442}.selo.analise{background:#c9ad52}
+.hospital-nome{font-size:1.1rem;margin:0 0 4px}
+.resumo{color:var(--sub);font-size:.9rem;margin:0 0 14px}
+.card [hidden]{display:none}
