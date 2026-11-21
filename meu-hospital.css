@@ -1,0 +1,13 @@
+
+/* ---------- Tela Meu hospital ---------- */
+.filtros-estoque{grid-template-columns:1fr auto;align-items:center;margin-bottom:6px}
+.check{display:flex;align-items:center;gap:8px;margin:0;font-size:.95rem;white-space:nowrap}
+.check input{width:auto}
+.item-estoque{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:14px}
+.item-estoque .nome{flex:1;font-size:1.05rem}
+.item-estoque .tag{margin-left:8px;vertical-align:middle}
+.form-qtd{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end;max-width:360px}
+.form-qtd input{width:110px}
+.form-qtd .erro{flex-basis:100%;text-align:right}
+@media(max-width:760px){.item-estoque{flex-direction:column;align-items:flex-start}.filtros-estoque{grid-template-columns:1fr}}
+.item-estoque small{display:block;color:var(--sub);font-size:.8rem;margin-top:5px}

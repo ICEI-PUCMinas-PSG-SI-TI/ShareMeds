@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ShareMeds - Meu hospital</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/meu-hospital.css">
+</head>
+<body>
+  <header class="topo">
+    <a class="logo" href="inicio.html">ShareMeds</a>
+    <nav>
+      <a href="#" data-grupo>Ofertar excedente</a>
+      <a href="#" data-grupo>Meus pedidos</a>
+      <a href="#" data-grupo>Pedidos recebidos</a>
+    </nav>
+  </header>
+
+  <main>
+    <a class="btn claro pequeno voltar" href="#" data-grupo>← Início</a>
+    <h1 style="text-decoration:none">Meu hospital</h1>
+    <p class="subtitulo" id="subtitulo">Estoque do Hospital “<span id="nome-hospital">—</span>”</p>
+
+    <div class="filtros filtros-estoque">
+      <input type="search" class="busca" id="busca-estoque" placeholder="Pesquisar medicamento">
+      <label class="check"><input type="checkbox" id="so-baixo"> Apenas abaixo do mínimo</label>
+    </div>
+    <p class="resumo" id="resumo-estoque">Carregando...</p>
+
+    <div id="lista-estoque"><p class="vazio">Carregando...</p></div>
+
+    <div class="rodape-card">
+      <a class="btn" href="#" data-grupo>Cadastrar medicamento</a>
+    </div>
+  </main>
+
+  <script src="js/common.js"></script>
+  <script src="js/meu-hospital.js"></script>
+</body>
+</html>
