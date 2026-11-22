@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ShareMeds - Cadastro de medicamento</title>
+  <link rel="stylesheet" href="cadastro-medicamento.css">
+</head>
+<body>
+  <header class="topo">
+    <!-- No projeto completo, troque href="#" data-grupo por href="menu.html" -->
+    <a class="logo" href="#" data-grupo>ShareMeds</a>
+  </header>
+
+  <main>
+    <a class="btn claro pequeno voltar" href="#" data-grupo>← Início</a>
+    <h1 style="text-decoration:none">Cadastro de medicamento</h1>
+    <p class="subtitulo">Adicione um medicamento ao estoque do seu hospital</p>
+
+    <form class="form" id="form-cadastro" novalidate>
+      <div class="linha-cad dupla">
+        <div>
+          <label for="medicamento">Medicamento</label>
+          <input id="medicamento" type="text" maxlength="80" placeholder="ex: Ibuprofeno (500 mg)">
+          <div class="erro" id="erro-medicamento"></div>
+        </div>
+        <div>
+          <label for="validade">Data de validade</label>
+          <input id="validade" type="month">
+          <div class="erro" id="erro-validade"></div>
+        </div>
+      </div>
+
+      <div class="linha-cad tripla">
+        <div>
+          <label for="quantidade">Quantidade</label>
+          <input id="quantidade" type="number" min="0" placeholder="ex: 100">
+          <div class="erro" id="erro-quantidade"></div>
+        </div>
+        <div>
+          <label for="unidade">Unidades</label>
+          <select id="unidade">
+            <option value="">Selecione, ex: comprimidos</option>
+            <option>caixas</option>
+            <option>ampolas</option>
+            <option>frascos</option>
+            <option>comprimidos</option>
+            <option>unidades</option>
+          </select>
+          <div class="erro" id="erro-unidade"></div>
+        </div>
+        <div>
+          <label for="estoqueMinimo">Estoque mínimo</label>
+          <input id="estoqueMinimo" type="number" min="0" placeholder="ex: 40">
+          <div class="erro" id="erro-estoqueMinimo"></div>
+        </div>
+      </div>
+
+      <div class="botoes">
+        <button type="submit" class="btn" id="btn-salvar">Salvar</button>
+        <button type="button" class="btn" id="btn-cancelar">Cancelar</button>
+      </div>
+    </form>
+
+  </main>
+
+  <script src="common.js"></script>
+  <script src="cadastro-medicamento.js"></script>
+</body>
+</html>
