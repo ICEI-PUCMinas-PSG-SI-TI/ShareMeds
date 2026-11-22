@@ -1,28 +1,33 @@
-let medicamentos = [
-    { nome: "Paracetamol", dosagem: "500mg", hospital: "Hospital A", validade: "2023-12-31" },
-    { nome: "Ibuprofeno", dosagem: "200mg", hospital: "Hospital B", validade: "2023-12-31" },
-    { nome: "Amoxicilina", dosagem: "250mg", hospital: "Hospital C", validade: "2023-12-31" },
-    { nome: "Omeprazol", dosagem: "20mg", hospital: "Hospital D", validade: "2023-12-31" },
-    { nome: "Paracetamol", dosagem: "500mg", hospital: "Hospital E", validade: "2024-06-30" },
+const medicamentos = [
+    {
+        nome: "Dipirona injetável",
+        dosagem: "1 g",
+        hospital: "Hospital Terraço",
+        validade: "04/2027"
+    },
+    {
+        nome: "Dipirona Monoidratada Solução oral",
+        dosagem: "500mg",
+        hospital: "Hospital Seguro",
+        validade: "11/2027"
+    }
 ];
+
 const formulario = document.getElementById("formBusca");
+const campoNome = document.getElementById("nombre");
+const campoValidade = document.getElementById("validade");
 const resultado = document.getElementById("resultado");
 
-formulario.addEventListener("submit", function(evento) {
-    evento.preventDefault();
+function renderizarMedicamentos() {
+    const nomeBusca = campoNome.value.trim().toLowerCase();
+    const validadeBusca = campoValidade.value.trim().toLowerCase();
 
-    const nome = document.getElementById("nombre")
-        .value.trim().toLowerCase();
-
-    const validade = document.getElementById("validade").value;
-
-    const encontrados = medicamentos.filter(m => {
-
-        const nomeConfere =
-            m.nome.toLowerCase().includes(nome);
-
+    const encontrados = medicamentos.filter((medicamento) => {
+        const nomeConfere = medicamento.nome.toLowerCase().includes(nomeBusca);
         const validadeConfere =
-            !validade || m.validade === validade;
+            !validadeBusca ||
+            medicamento.validade.toLowerCase().includes(validadeBusca) ||
+            medicamento.dosagem.toLowerCase().includes(validadeBusca);
 
         return nomeConfere && validadeConfere;
     });
@@ -30,47 +35,48 @@ formulario.addEventListener("submit", function(evento) {
     resultado.replaceChildren();
 
     if (encontrados.length === 0) {
-        resultado.textContent = "Nenhum medicamento encontrado.";
+        const mensagem = document.createElement("p");
+        mensagem.className = "sem-resultados";
+        mensagem.textContent = "Nenhum medicamento encontrado.";
+        resultado.appendChild(mensagem);
         return;
     }
 
-    encontrados.forEach(m => {
-    const card = document.createElement("div");
-    card.className = "card mb-3";
+    encontrados.forEach((medicamento) => {
+        const item = document.createElement("article");
+        item.className = "resultado-item";
 
-    const corpo = document.createElement("div");
-    corpo.className = "card-body";
+        const informacoes = document.createElement("div");
 
-    // Cabeçalho com nome e botão
-    const cabecalho = document.createElement("div");
-    cabecalho.className = "d-flex justify-content-between align-items-center";
+        const titulo = document.createElement("h2");
+        titulo.textContent =
+            `${medicamento.nome} (${medicamento.dosagem})`;
 
-    const titulo = document.createElement("h5");
-    titulo.className = "card-title mb-0";
-    titulo.textContent = m.nome;
+        const detalhes = document.createElement("p");
+        detalhes.textContent =
+            `${medicamento.hospital}  -  val. ${medicamento.validade}`;
 
-    const botao = document.createElement("button");
-    botao.className = "btn btn-success btn-sm";
-    botao.textContent = "Solicitar";
+        informacoes.append(titulo, detalhes);
 
-    botao.addEventListener("click", function() {
-        alert("Solicitação do medicamento: " + m.nome);
+        const botao = document.createElement("button");
+        botao.type = "button";
+        botao.className = "btn-solicitar";
+        botao.textContent = "Solicitar";
+        botao.addEventListener("click", () => {
+            alert(`Solicitação do medicamento: ${medicamento.nome}`);
+        });
+
+        item.append(informacoes, botao);
+        resultado.appendChild(item);
     });
+}
 
-    cabecalho.append(titulo, botao);
-
-    // Informações do medicamento
-    const informacoes = document.createElement("div");
-    informacoes.className = "mt-3";
-
-    informacoes.innerHTML = `
-        <p><strong>Dosagem:</strong> ${m.dosagem}</p>
-        <p><strong>Hospital:</strong> ${m.hospital}</p>
-        <p><strong>Validade:</strong> ${m.validade}</p>
-    `;
-
-    corpo.append(cabecalho, informacoes);
-    card.appendChild(corpo);
-    resultado.appendChild(card);
+formulario.addEventListener("submit", (evento) => {
+    evento.preventDefault();
+    renderizarMedicamentos();
 });
-});
+
+campoNome.addEventListener("input", renderizarMedicamentos);
+campoValidade.addEventListener("input", renderizarMedicamentos);
+
+renderizarMedicamentos();

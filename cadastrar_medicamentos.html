@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -8,76 +8,67 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-
+    <link rel="stylesheet" href="cadastrar_medicamentos.css">
 </head>
 
 <body>
-    <div class="container mt-5">
-    <h1 class="mb-4">Cadastrar Medicamento</h1>
+    <header class="topo">
+        <a class="logo" href="menu.html">ShareMeds</a>
+    </header>
 
-    <form id="CadastrarMedicamento">
-        <div class="mb-3">
-            <label for="nombre" class="form-label">
-                Medicamento:
-            </label>
-            <input
-                type="text"
-                class="form-control"
-                id="nombre"
-                name="nombre"
-                required
-            >
+    <main>
+        <a class="btn-voltar" href="menu.html">&#8592; Início</a>
 
-            <label for="validade" class="form-label mt-3">
-                Data de Validade:
-            </label>
-            <input
-                type="date"
-                class="form-control"
-                id="validade"
-                name="validade"
-            >
-            <label for="quantidade" class="form-label mt-3">
-                Quantidade:
-            </label>
-            <input
-                type="number"
-                class="form-control"
-                id="quantidade"
-                name="quantidade"
-                required
-            >
-            <label for="unidades" class="form-label mt-3">
-                Unidades:
-            </label>
-            <input
-                type="text"
-                class="form-control"
-                id="unidades"
-                name="unidades"
-                required
-            >
-            <label for="estoque_minimo" class="form-label mt-3">
-                Estoque mínimo:
-            </label>
-            <input
-                type="number"
-                class="form-control"
-                id="estoque_minimo"
-                name="estoque_minimo"
-                required
-            >
-        </div>
-        </div>
+        <h1>Cadastro de medicamento</h1>
+        <p class="subtitulo">Adicione um medicamento ao estoque do seu hospital</p>
 
-        <button type="submit" class="btn btn-primary">
-            Cadastrar
-        </button>
-    </form>
+        <form id="CadastrarMedicamento" class="form-card">
+            <div class="linha-principal">
+                <div class="campo">
+                    <label for="nombre">Medicamento</label>
+                    <input type="text" id="nombre" name="nombre"
+                        placeholder="ex: Dipirona" required>
+                </div>
 
-    <div id="resultado" class="mt-4"></div>
-    
-</div>
+                <div class="campo">
+                    <label for="validade">Data de validade</label>
+                    <input type="date" id="validade" name="validade">
+                </div>
+            </div>
+
+            <div class="linha-secundaria">
+                <div class="campo">
+                    <label for="quantidade">Quantidade</label>
+                    <input type="number" id="quantidade" name="quantidade"
+                        placeholder="ex: 100" required>
+                </div>
+
+                <div class="campo">
+                    <label for="unidades">Unidades</label>
+                    <select id="unidades" name="unidades" required>
+                        <option value="">Selecione a unidade</option>
+                        <option value="comprimidos">Comprimidos</option>
+                        <option value="ampolas">Ampolas</option>
+                        <option value="frascos">Frascos</option>
+                        <option value="caixas">Caixas</option>
+                        <option value="unidades">Unidades</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="estoque_minimo">Estoque mínimo</label>
+                    <input type="number" id="estoque_minimo" name="estoque_minimo"
+                        placeholder="ex: 40" required>
+                </div>
+            </div>
+
+            <div class="botoes">
+                <button type="submit" class="btn-acao">Salvar</button>
+                <button type="reset" class="btn-acao">Cancelar</button>
+            </div>
+        </form>
+    </main>
+
     <script src="cadastrar_medicamento.js"></script>
 </body>
 
