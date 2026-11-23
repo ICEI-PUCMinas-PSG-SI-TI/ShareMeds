@@ -1,0 +1,9 @@
+{
+  "ofertarExcedente": [
+    { "id": "1", "medicamento": "Ibuprofeno (500 mg)", "dataDeValidade": "15 dias", "quantidadeDisponível": "15 caixas" },
+    { "id": "2", "medicamento": "Dipirona (500 mg)", "dataDeValidade": "20 dias", "quantidadeDisponível": "30 caixas" },
+    { "id": "3", "medicamento": "Amoxicilina (500 mg)", "dataDeValidade": "10 dias", "quantidadeDisponível": "8 caixas" },
+    { "id": "4", "medicamento": "Soro Fisiológico 0,9% (500 ml)", "dataDeValidade": "30/12/2026", "quantidadeDisponível": "40 frascos" },
+    { "id": "5", "medicamento": "Paracetamol (750 mg)", "dataDeValidade": "25 dias", "quantidadeDisponível": "12 caixas" }
+  ]
+}

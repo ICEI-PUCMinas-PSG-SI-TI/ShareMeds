@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShareMeds - Ofertar excedente</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/ofertar-excedentes.css">
+</head>
+<body>
+  <header class="topo">
+    <h1 class="logo">ShareMeds</h1>
+  </header>
+
+  <main class="conteudo">
+    <!-- 1. Início -->
+    <a href="#" class="btn-inicio" id="btnInicio" onclick="return false;">&larr; Início</a>
+
+    <!-- 2. Título e descrição -->
+    <h2 class="titulo">Ofertar excedente</h2>
+    <p class="descricao">Ofereça um medicamento próximo a data de vencimento</p>
+
+    <form id="formOfertarExcedentes" class="card" novalidate>
+      <div class="campos">
+        <!-- 3. Medicamento -->
+        <div class="campo">
+          <label for="medicamento">Medicamento</label>
+          <input type="text" id="medicamento" name="medicamento" placeholder="ex:  Ibuprofeno (500 mg)" autocomplete="off">
+          <span class="erro" data-erro-para="medicamento"></span>
+        </div>
+
+        <!-- 4. Data de validade -->
+        <div class="campo">
+          <label for="dataDeValidade">Data de validade</label>
+          <input type="text" id="dataDeValidade" name="dataDeValidade" placeholder="ex: 15 dias" autocomplete="off">
+          <span class="erro" data-erro-para="dataDeValidade"></span>
+        </div>
+
+        <!-- 5. Quantidade disponível -->
+        <div class="campo">
+          <label for="quantidadeDisponivel">Quantidade disponível</label>
+          <input type="text" id="quantidadeDisponivel" name="quantidadeDisponivel" placeholder="ex: 15 caixas" autocomplete="off">
+          <span class="erro" data-erro-para="quantidadeDisponivel"></span>
+        </div>
+      </div>
+
+      <div class="acoes">
+        <!-- 6. Enviar -->
+        <button type="submit" class="btn-escuro" id="btnEnviar">Enviar</button>
+        <!-- 7. Cancelar -->
+        <button type="button" class="btn-escuro" id="btnCancelar">Cancelar</button>
+      </div>
+    </form>
+
+    <p class="mensagem" id="mensagem" role="status" aria-live="polite"></p>
+
+    <!-- Ofertas cadastradas (READ / UPDATE / DELETE) -->
+    <section class="lista-ofertas" aria-labelledby="tituloLista">
+      <h3 id="tituloLista" class="subtitulo">Ofertas cadastradas</h3>
+      <div class="tabela-wrap">
+        <table id="tabelaOfertas">
+          <thead>
+            <tr>
+              <th data-ordem="medicamento" title="Clique para ordenar">Medicamento</th>
+              <th data-ordem="dataDeValidade" title="Clique para ordenar">Data de validade</th>
+              <th data-ordem="quantidadeDisponível" title="Clique para ordenar">Quantidade disponível</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="corpoTabela"></tbody>
+        </table>
+      </div>
+      <p class="vazio" id="msgVazio"></p>
+    </section>
+  </main>
+
+  <script src="js/ofertar-excedentes.js"></script>
+</body>
+</html>
