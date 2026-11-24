@@ -1,13 +1,15 @@
 
-
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Cadastro | ShareMeds</title>
-    <link rel="stylesheet" href="style.css"> 
-       
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -22,7 +24,7 @@
                 Cadastro de médico. O acesso é liberado após validação dos dados.
             </p>
 
-            <form>
+            <form id="cadastroForm">
 
                 <div class="campo">
                     <label for="nome">Nome completo:</label>
@@ -37,13 +39,11 @@
                 <div class="campo">
                     <label for="hospital">Hospital onde trabalha</label>
                     <select id="hospital" required>
-                        <option value="">Selecione uma opção</option>                       
-                        <option value="Hospital Marinha">Hospital Marinha</option>
-                        <option value="Hospital Vida Longa">Hospital Vida Longa</option>
+                        <option value="">Selecione uma opção</option>
                         <option value="Hospital Seguro">Hospital Seguro</option>
+                        <option value="Hospital Vida Longa">Hospital Vida Longa</option>
+                        <option value="Hospital Marinha">Hospital Marinha</option>
                         <option value="Hospital Terraço">Hospital Terraço</option>
-                        
-
                     </select>
                 </div>
 
@@ -54,7 +54,7 @@
 
                 <div class="campo">
                     <label for="senha">Senha</label>
-                    <input type="password" id="senha" required>
+                    <input type="password" id="senha" minlength="6" required>
                 </div>
 
                 <div class="campo">
@@ -69,7 +69,6 @@
                             type="file"
                             id="documento"
                             accept=".jpg,.jpeg,.png,.pdf"
-                            required
                         >
                     </div>
                 </div>
@@ -91,6 +90,7 @@
 
 </body>
 </html>
+
 
 
 

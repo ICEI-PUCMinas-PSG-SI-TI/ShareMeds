@@ -1,0 +1,205 @@
+
+
+.pagina-pedidos {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Georgia, "Times New Roman", serif;
+    background-color: #d9e0ed;
+    color: #111;
+    min-height: 100vh;
+    border-left: 26px solid #1c1c1c;
+}
+
+/* CABEÇALHO */
+
+.cabecalho-pedidos {
+    background-color: #7186a5;
+    color: #fff;
+    padding: 14px 32px;
+}
+
+.logo-pedidos {
+    font-size: 30px;
+}
+
+/* CONTEÚDO PRINCIPAL */
+
+.conteudo-pedidos {
+    padding: 27px 26px;
+}
+
+/* BOTÃO INÍCIO */
+
+.btn-inicio {
+    display: inline-block;
+    font-family: inherit;
+    font-size: 23px;
+    padding: 5px 10px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    background-color: #dedede;
+    color: #111;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-inicio:hover {
+    background-color: #c8c8c8;
+}
+
+/* TÍTULOS */
+
+.conteudo-pedidos h1 {
+    font-size: 30px;
+    margin-top: 33px;
+    margin-bottom: 7px;
+}
+
+.subtitulo-pedidos {
+    font-size: 25px;
+    color: #454545;
+    margin-bottom: 47px;
+}
+
+/* LISTA DE PEDIDOS */
+
+.lista-pedidos {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 0 4%;
+}
+
+/* CARTÕES */
+
+.pedido {
+    background-color: #eef1f6;
+    border-radius: 9px;
+    padding: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.informacoes {
+    flex: 1;
+    min-width: 0;
+}
+
+.medicamento {
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.detalhes {
+    font-size: 19px;
+    color: #444;
+    line-height: 1.5;
+}
+
+/* BOTÕES */
+
+.acoes {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    min-width: 140px;
+    padding: 12px 18px;
+    font-family: inherit;
+    font-size: 19px;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+}
+
+.aceitar {
+    background-color: #607953;
+}
+
+.recusar {
+    background-color: #b04b4e;
+}
+
+/* MENSAGENS */
+
+.mensagem {
+    margin-top: 12px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.sucesso {
+    color: #42633b;
+}
+
+.erro {
+    color: #b04b4e;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 750px) {
+
+    .pagina-pedidos {
+        border-left-width: 12px;
+    }
+
+    .cabecalho-pedidos {
+        padding: 16px 20px;
+    }
+
+    .logo-pedidos {
+        font-size: 26px;
+    }
+
+    .conteudo-pedidos {
+        padding: 22px 15px;
+    }
+
+    .conteudo-pedidos h1 {
+        font-size: 27px;
+    }
+
+    .subtitulo-pedidos {
+        font-size: 21px;
+        margin-bottom: 30px;
+    }
+
+    .lista-pedidos {
+        margin: 0;
+        gap: 20px;
+    }
+
+    .pedido {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 18px;
+    }
+
+    .acoes {
+        gap: 10px;
+    }
+
+    .btn {
+        min-width: 0;
+        flex: 1;
+        padding: 10px 8px;
+        font-size: 17px;
+    }
+
+    .detalhes {
+        font-size: 17px;
+    }
+}

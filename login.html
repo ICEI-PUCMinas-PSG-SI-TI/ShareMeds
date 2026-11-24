@@ -6,9 +6,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Entrar | ShareMeds</title>
+    <title>Login | ShareMeds</title>
 
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body class="login-page">
@@ -23,36 +24,16 @@
                 Acesso restrito a profissionais credenciados
             </p>
 
-            <form>
+            <form id="loginForm">
 
                 <div class="login-field">
-
-                    <label for="email">
-                        E-mail institucional:
-                    </label>
-
-                    <input
-                        type="email"
-                        id="email"
-                        placeholder="Digite seu e-mail"
-                        required
-                    >
-
+                    <label for="email">E-mail institucional:</label>
+                    <input type="email" id="email" required>
                 </div>
 
                 <div class="login-field">
-
-                    <label for="senha">
-                        Senha:
-                    </label>
-
-                    <input
-                        type="password"
-                        id="senha"
-                        placeholder="Digite sua senha"
-                        required
-                    >
-
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" required>
                 </div>
 
                 <button type="submit" class="login-button">
@@ -69,10 +50,7 @@
 
                 <p>
                     Não tem senha?
-
-                    <a href="cadastro.html">
-                        Fazer cadastro
-                    </a>
+                    <a href="cadastro.html">Fazer cadastro</a>
                 </p>
 
             </div>
@@ -83,3 +61,5 @@
 
 </body>
 </html>
+
+

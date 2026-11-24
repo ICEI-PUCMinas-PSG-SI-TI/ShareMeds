@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ShareMeds - Pedidos Recebidos</title>
+
+    <link rel="stylesheet" href="pedidos.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body class="pagina-pedidos">
+
+    <header class="cabecalho-pedidos">
+        <div class="logo-pedidos">ShareMeds</div>
+    </header>
+
+    <main class="conteudo-pedidos">
+
+        <a href="login.html" class="btn-inicio">
+            ← Início
+        </a>
+
+        <h1>Pedidos recebidos</h1>
+
+        <p class="subtitulo-pedidos">
+            Medicamentos solicitados por outros hospitais
+        </p>
+
+        <section class="lista-pedidos">
+
+            <!-- Primeiro pedido -->
+            <article class="pedido">
+
+                <div class="informacoes">
+                    <h2 class="medicamento">
+                        Amoxicilina (500 mg)
+                    </h2>
+
+                    <p class="detalhes">
+                        Hosp. Seguro - urgência alta - vencimento 1 mês
+                    </p>
+                </div>
+
+                <div class="acoes">
+
+                    <button class="btn aceitar"
+                        onclick="responderPedido(this, 'aceito')">
+                        Aceitar
+                    </button>
+
+                    <button class="btn recusar"
+                        onclick="responderPedido(this, 'recusado')">
+                        Recusar
+                    </button>
+
+                </div>
+
+            </article>
+
+            <!-- Segundo pedido -->
+            <article class="pedido">
+
+                <div class="informacoes">
+                    <h2 class="medicamento">
+                        Paracetamol (500 mg)
+                    </h2>
+
+                    <p class="detalhes">
+                        Hosp. Terraço - urgência média - vencimento 6 meses
+                    </p>
+                </div>
+
+                <div class="acoes">
+
+                    <button class="btn aceitar"
+                        onclick="responderPedido(this, 'aceito')">
+                        Aceitar
+                    </button>
+
+                    <button class="btn recusar"
+                        onclick="responderPedido(this, 'recusado')">
+                        Recusar
+                    </button>
+
+                </div>
+
+            </article>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
